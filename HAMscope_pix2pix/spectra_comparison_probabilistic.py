@@ -778,17 +778,7 @@ def natural_sort_key(s):
     return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]
 
 
-image_directory = '/media/al/Extreme SSD/20250425_results/results/new_layer_norm/results/20250425_0gan_single_reg_hs/test_latest/images'
-#image_directory = '/media/al/Extreme SSD/20250425_results/results/new_layer_norm/nmf/20250425_0gan_single_reg_hs_nmf/test_latest/images'
-#image_directory = '/media/al/Extreme SSD/20250425_results/results/misc_test_dataset_layernorm/results/20250425_0gan_single_reg_hs_fig4wt/test_latest/images'
-#image_directory = '/media/al/Extreme SSD/20250425_results/results/misc_test_dataset_layernorm/results/20250425_0gan_single_reg_hs_dasmeet_movie/test_latest/images'
-#image_directory = '/media/al/Extreme SSD/20250425_results/results/misc_test_dataset_layernorm/results/20250425_0gan_single_reg_hs_nmf_suberine/test_latest/images'
-#image_directory = '/media/al/Extreme SSD/20250425_results/results/misc_test_dataset_layernorm/results/20250425_0gan_single_reg_hs_nmf_fig5A/test_latest/images'
-#image_directory = '/media/al/Extreme SSD/20250425_results/results/misc_test_dataset_layernorm/results/fig5A_GT/20250425_0gan_single_reg_hs_nmf_fig5A/test_latest/images'
-#image_directory = '/media/al/Extreme SSD/20250425_results/results/misc_test_dataset_layernorm/results/20250425_0gan_single_reg_hs_nmf_fig5A/test_latest/images'
-#image_directory = '/media/al/Extreme SSD/20250425_results/results/20250704/misc_dataset_reg_smin1e-4/results/20250425_0gan_single_reg_hs_fig5A/test_latest/images'
-image_directory = '/media/al/20250701_AI/hs_results/20250707_results/results/20250425_0gan_single_reg_hs_gradloss1e2/test_latest/images'
-
+image_directory = './results/20250425_0gan_single_reg_hs/test_latest/images'
 
 # Uncomment this if you have an AverageMetricsCalculator class
 AverageMetricsCalculator(image_directory)

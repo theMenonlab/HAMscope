@@ -71,14 +71,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   - Modified data loaders for TIFF hyperspectral formats
   - Enhanced visualization for multi-channel outputs
 
-#### Files Directly Based on pix2pix/CycleGAN
-- `HAMscope_pix2pix/train.py` - Core training script
-- `HAMscope_pix2pix/test.py` - Inference script  
-- `HAMscope_pix2pix/models/` - Network architectures and training logic
-- `HAMscope_pix2pix/data/` - Dataset loading and processing
-- `HAMscope_pix2pix/options/` - Command-line argument handling
-- `HAMscope_pix2pix/util/` - Utility functions and visualization
-
 #### Required Citations
 ```bibtex
 @inproceedings{isola2017image,
@@ -158,7 +150,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ### 5. Spectral Attention Transformer
 
-**Source**: Nature (2024) - Linear Compute Transformer for Hyperspectral Imaging
+**Source**: A broadband hyperspectral image sensor with high spatio-temporal resolution
+**Authors**: Liheng Bian, Zhen Wang, Yuzhe Zhang, et al.
 **Repository**: https://github.com/bianlab/HyperspecI
 **License**: Research use (contact authors for commercial use)
 
@@ -166,6 +159,21 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - **Location**: `HAMscope_pix2pix/models/attention.py`
 - **Usage**: Spectral attention mechanism for hyperspectral data
 - **Modifications**: Adapted for 30-channel hyperspectral microscopy data
+
+#### Citation Requirements
+```bibtex
+@article{bian2024broadband,
+  title={A broadband hyperspectral image sensor with high spatio-temporal resolution},
+  author={Bian, Liheng and Wang, Zhen and Zhang, Yuzhe and Li, Lianjie and Zhang, Yinuo and Yang, Chen and Fang, Wen and Zhao, Jiajun and Zhu, Chunli and Meng, Qinghao and Peng, Xuan and Zhang, Jun},
+  journal={Nature},
+  volume={635},
+  number={8037},
+  pages={73--81},
+  year={2024},
+  publisher={Nature Publishing Group},
+  doi={10.1038/s41586-024-08109-1}
+}
+```
 
 ### 6. Quadratic Intensity Transformer
 
@@ -211,4 +219,4 @@ For licensing questions:
 
 ---
 
-**Last Updated**: July 10, 2025
+**Last Updated**: July 11, 2025

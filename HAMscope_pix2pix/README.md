@@ -2,7 +2,8 @@
 
 ## Overview
 
-This implementation extends the original PyTorch pWe also introThe GAN framework comprises two convolutional neural networks: a generator that predicts the hyperspectral image from the monochrome input and a discriminator that learns to distinguish predicted outputs from real measurements. A composite loss function guides training: the discriminator's adversarial loss encourages realistic image generation, while an L1 loss enforces pixel-level fidelity. To prevent overfitting or artifact hallucination, the discriminator loss is typically scaled down to remain subordinate to the L1 reconstruction term.uced a multi-U-Net architecture designed to mimic a larger model's depth and expressive power while preserving memory efficiency. Feature maps from the decoder of the previous pass are sent into the encoder of the next pass at every downsampling level of the U-Net via shared skip connections, effectively multiplying the number of convolutional layers without increasing the parameter count. The number of U-Net passes can be modified with an input parameter, but the effects diminish after four or five passes. This architecture matched or exceeded the performance of a U-Net with twice the number of filters per layer (from 64 to 128) and fourfold the parameter count without significantly increasing VRAM requirements and remaining trainable on an NVIDIA RTX 3060. In contrast, the higher-capacity control model required an RTX 3090.2pix framework with specialized features for hyperspectral microscopy:
+HAMscope pix2pix is an image to image neural network for converting diffusive images from a miniscope into hyperspectral image stacks. It is based upon the pix2pix framework (https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix). Additions are outlined in the HAMscope specific options below.
+
 
 - **Input**: Single-channel grayscale images from diffusive HAMscope
 - **Output**: 30-channel hyperspectral images (450-700nm)
@@ -204,7 +205,7 @@ Split 1-4 represent different experimental conditions (e.g., poplar branches). C
 
 ## Usage Examples
 
-### Training
+### Training - Included Model is Pretrained, skip this
 ```bash
 python train.py \
   --dataroot /path/to/dataset \
@@ -216,17 +217,26 @@ python train.py \
   --use_nll 1 \
   --use_comp 3 \
   --use_reg 1 \
-  --use_trans 2 \
+  --use_trans 0 \
   --netD_mult 0.005 \
+  --norm layer \
   --n_epochs 15 \
   --n_epochs_decay 15
 ```
 
-### Testing
+### Testing Included Model
 ```bash
+# Navigate to the dir
+cd HAMscope/HAMscope_pix2pix
+
+# activate the environment
+conda activate pix2pix
+
+# Test the model 
+# Test results are also included, skip this
 python test.py \
-  --dataroot /path/to/dataset \
-  --name experiment_name \
+  --dataroot ./dataset/test_dataset \
+  --name 20250425_0gan_single_reg_hs \
   --model pix2pix \
   --input_nc 1 \
   --output_nc 60 \
@@ -234,8 +244,12 @@ python test.py \
   --use_nll 1 \
   --use_comp 3 \
   --use_reg 1 \
-  --use_trans 2 \
+  --use_trans 0 \
+  --norm layer \
   --num_test 100
+
+# Analyze the results
+python spectra_comparison_probabilistic.py
 ```
 
 ## License
