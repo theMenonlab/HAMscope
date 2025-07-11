@@ -46,4 +46,19 @@ This project incorporates components from the following open-source projects:
    Authors: Richard A. Neher, Fabian J. Theis, André Zeug
    Reference: Neher et al., Biophysical Journal 96.9 (2009): 3791-3800
 
+4. Reg-GAN Registration Network
+   Authors: Lingke Kong, Chenyu Lian, Detian Huang, et al.
+   Reference: Kong et al., NeurIPS (2021)
+   License: Research use (contact authors for commercial use)
+
+5. Linear Complexity Transformer for Hyperspectral Imaging
+   Authors: Liheng Bian, Zhen Wang, Yuzhe Zhang, et al.
+   Reference: Bian et al., Nature 635.8037 (2024): 73-81
+   License: Research use (contact authors for commercial use)
+
+6. Quadratic Intensity Transformer
+   Authors: Tripathy et al.
+   Reference: Multimedia Systems (2020)
+   License: Research use (contact authors for commercial use)
+
 For complete attribution and licensing details, see THIRD_PARTY_ATTRIBUTION.md

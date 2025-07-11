@@ -1,8 +1,9 @@
 .DS_Store
 debug*
 datasets/
-checkpoints/
+dataset/
 results/
+checkpoints/
 build/
 dist/
 *.png
